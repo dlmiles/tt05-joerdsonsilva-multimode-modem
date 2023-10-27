@@ -1,0 +1,26 @@
+[*]
+[*] GTKWave Analyzer v3.3.61 (w)1999-2014 BSI
+[*] Fri Oct 27 16:32:14 2023
+[*]
+[dumpfile] "/home/projetos/Desktop/tb.vcd"
+[dumpfile_mtime] "Fri Oct 27 16:30:00 2023"
+[dumpfile_size] 11227377
+[savefile] "/home/projetos/Desktop/tb.gtkw"
+[timestart] 0
+[size] 1024 665
+[pos] -1 -1
+*-42.446533 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 229
+[signals_width] 126
+[sst_expanded] 1
+[sst_vpaned_height] 162
+@28
+tb.clk
+tb.rst_n
+tb.sel[1:0]
+@8022
+tb.mod_out[6:0]
+@28
+tb.demod_out[7]
+[pattern_trace] 1
+[pattern_trace] 0
