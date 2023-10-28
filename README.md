@@ -10,7 +10,7 @@
 
   The multimode modem has the following inputs and outputs:
      
-| Tipo   | Nome          | Tamanho  |
+| Type   | Function      | Size     |
 |--------|---------------|----------|
 | Input  | clock         | 1 bit    |
 | Input  | reset         | 1 bit    |
