@@ -76,8 +76,8 @@ documentation:
          - Output - mod_out (7 bits)
          - Output - demod_out (1 bit)
        
-      Apply a “clock” of 50MHz. Then, apply a “reset” signal of logic level “1” to synchronize the modem system and then make the “reset” 
-      signal a logic level “0”. After that, select the type of modulation to be used, as per the sequence below:
+      Apply a “clock” of 40~50 MHz. Then, apply a “reset” signal of logic level “1” to synchronize the modem system and then make the 
+      “reset” signal a logic level “0”. After that, select the type of modulation to be used, as per the sequence below:
 
          - Sel = "01" <= ASK modulation and demodulation
     
@@ -121,8 +121,8 @@ documentation:
 
 # The following fields are optional
   tag:          "clock, modem, signal generator"    # comma separated list of tags: test, encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
-  external_hw:  ""             # Describe any external hardware needed
-  discord:      "jsilva"       # Your discord handle, used for communication and automatically assigning tapeout role after a submission
-  doc_link:     ""             # URL to longer form documentation, eg the README.md in your repository
+  external_hw:  "oscilloscope or signal analyzer"   # Describe any external hardware needed
+  discord:      "joerdson"       # Your discord handle, used for communication and automatically assigning tapeout role after a submission
+  doc_link:     "README.md"    # URL to longer form documentation, eg the README.md in your repository
   clock_hz:     50000000       # Clock frequency in Hz (if required)
   picture:      ""             # relative path to a picture in your repository (must be 512kb or less)
