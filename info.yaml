@@ -80,17 +80,11 @@ documentation:
       signal a logic level “0”. After that, select the type of modulation to be used, as per the sequence below:
 
          - Sel = "01" <= ASK modulation and demodulation
-        
     
-        
          - Sel = "10" <= FSK modulation and demodulation
-
-      
 
          - Sel = "11" <= PSK modulation and demodulation
 
-        
-       
       After selecting the modulation type, the modulated signal is expressed at the “mod_out” output, and the demodulated signal at the 
       “demod_out” output.
 
