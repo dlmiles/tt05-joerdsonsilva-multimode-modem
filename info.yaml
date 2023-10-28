@@ -81,15 +81,15 @@ documentation:
 
          - Sel = "01" <= ASK modulation and demodulation
         
-         ![ASK modulation](https://github.com/joerdsonsilva/tt05-modem-multimodo/assets/75455785/7885da6d-19c0-4ea4-93df-fe9377f16f1b)
+    
         
          - Sel = "10" <= FSK modulation and demodulation
 
-         ![FSK modulation](https://github.com/joerdsonsilva/tt05-modem-multimodo/assets/75455785/26c18b6c-8a39-4f17-8120-2880f6fd2d3e)
+      
 
          - Sel = "11" <= PSK modulation and demodulation
 
-         ![PSK modulation](https://github.com/joerdsonsilva/tt05-modem-multimodo/assets/75455785/25bf8cd0-d85f-4e68-899d-9a06f54a4267)
+        
        
       After selecting the modulation type, the modulated signal is expressed at the “mod_out” output, and the demodulated signal at the 
       “demod_out” output.
