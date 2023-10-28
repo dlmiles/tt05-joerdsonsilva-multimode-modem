@@ -1,40 +1,38 @@
 ![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg) ![](../../workflows/wokwi_test/badge.svg)
 
-# What is Tiny Tapeout?
+# Multimode Modem
 
-TinyTapeout is an educational project that aims to make it easier and cheaper than ever to get your digital designs manufactured on a real chip.
+<div align="justify">
+  The multimode modem uses a clock signal to generate digitized signals over time, in sinusoidal format (carrier wave). From this digitized sinusoid, the modulation process is applied using different methods for each scheme, implemented through specific internal blocks to perform modulations ASK (switching the amplitude of the sine wave), FSK (switching the frequency of the sine wave through a digital signal modulator) and PSK (phase coding). In the demodulation stage, these three modulation schemes are analyzed to recover the original information, manifesting as '0' or '1' values that reflect the data signal already restored after the process.
+  </div>
 
-To learn more and get started, visit https://tinytapeout.com.
+## Inputs and Outputs
 
-## Wokwi Projects
+  The multimode modem has the following inputs and outputs:
+     
+| Tipo   | Nome          | Tamanho  |
+|--------|---------------|----------|
+| Input  | clock         | 1 bit    |
+| Input  | reset         | 1 bit    |
+| Input  | sel           | 2 bits   |
+| Output | mod_out       | 7 bits   |
+| Output | demod_out     | 1 bit    |
 
-Edit the [info.yaml](info.yaml) and change the wokwi_id to the ID of your Wokwi project. You can find the ID in the URL of your project, it's the big number after `wokwi.com/projects/`.
+## How to Test
 
-The GitHub action will automatically fetch the digital netlist from Wokwi and build the ASIC files.
+<div align="justify">
+Apply a clock of 40~50 MHz. Next, apply a “1” logic level “reset” signal to synchronize the modem system and then make the “reset” signal a “0” logic level. Then select the type of modulation to be used, according to the sequence below. After selecting the modulation type, the modulated signal is expressed at the “mod_out” output and the demodulated signal at the “demod_out” output.
+  </div>
 
-## Verilog Projects
+ - Sel = "01" <= ASK modulation and demodulation
+    
+    ![01](https://github.com/joerdsonsilva/tt05-multimode-modem/assets/75455785/1acb1f2a-ad28-414d-ab8e-93733e423582)
+    
+ - Sel = "10" <= FSK modulation and demodulation
 
-Edit the [info.yaml](info.yaml) and uncomment the `source_files` and `top_module` properties, and change the value of `language` to "Verilog". Add your Verilog files to the `src` folder, and list them in the `source_files` property.
+   ![10](https://github.com/joerdsonsilva/tt05-multimode-modem/assets/75455785/3f904341-be24-4f8a-ab3d-aaa245806197)
 
-The GitHub action will automatically build the ASIC files using [OpenLane](https://www.zerotoasiccourse.com/terminology/openlane/).
+ - Sel = "11" <= PSK modulation and demodulation
 
-## Enable GitHub actions to build the results page
-
-- [Enabling GitHub Pages](https://tinytapeout.com/faq/#my-github-action-is-failing-on-the-pages-part)
-
-## Resources
-
-- [FAQ](https://tinytapeout.com/faq/)
-- [Digital design lessons](https://tinytapeout.com/digital_design/)
-- [Learn how semiconductors work](https://tinytapeout.com/siliwiz/)
-- [Join the community](https://discord.gg/rPK2nSjxy8)
-
-## What next?
-
-- Submit your design to the next shuttle [on the website](https://tinytapeout.com/#submit-your-design). The closing date is **November 4th**.
-- Edit this [README](README.md) and explain your design, how it works, and how to test it.
-- Share your GDS on your social network of choice, tagging it #tinytapeout and linking Matt's profile:
-  - LinkedIn [#tinytapeout](https://www.linkedin.com/search/results/content/?keywords=%23tinytapeout) [matt-venn](https://www.linkedin.com/in/matt-venn/)
-  - Mastodon [#tinytapeout](https://chaos.social/tags/tinytapeout) [@matthewvenn](https://chaos.social/@matthewvenn)
-  - Twitter [#tinytapeout](https://twitter.com/hashtag/tinytapeout?src=hashtag_click) [@matthewvenn](https://twitter.com/matthewvenn)
+   ![11](https://github.com/joerdsonsilva/tt05-multimode-modem/assets/75455785/8e891f61-76d3-4adf-8009-26fa9175b915)
 
