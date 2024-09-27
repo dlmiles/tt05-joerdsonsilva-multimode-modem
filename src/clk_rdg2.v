@@ -8,7 +8,7 @@ module clk_rdg2(reset, clk_in, clk_out);
   wire [12:0] _3_;
   wire _4_;
   reg _5_;
-  reg [12:0] _6_ = 13'h0000;
+  reg [12:0] _6_ /*= 13'h0000*/;
   input clk_in;
   wire clk_in;
   output clk_out;
