@@ -3,7 +3,7 @@
 module integrator2(clk, reset, comp_in, comp_out);
   wire _00_;
   wire [31:0] _01_;
-  reg [31:0] _02_ = 32'd0;
+  reg [31:0] _02_ /*= 32'd0*/;
   reg _03_;
   wire [31:0] _04_;
   wire _05_;
