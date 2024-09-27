@@ -16,7 +16,8 @@ module demod_bpsk(reset, clk, demod_in, data_demod_bpsk);
   wire [6:0] sig_wave1;
   wave133 instance2 (
     .clk(clk),
-    .dataout(_0_)
+    .dataout(_0_),
+    .reset(reset)
   );
   mult3 instance3 (
     .a0(demod_in),

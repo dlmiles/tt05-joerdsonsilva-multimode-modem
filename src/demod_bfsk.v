@@ -16,7 +16,8 @@ module demod_bfsk(reset, clk, demod_in, data_demod_bfsk);
   wire [6:0] sig_wave;
   wave122 instance2 (
     .clk(clk),
-    .dataout(_0_)
+    .dataout(_0_),
+    .reset(reset)
   );
   mult2 instance3 (
     .a0(demod_in),
