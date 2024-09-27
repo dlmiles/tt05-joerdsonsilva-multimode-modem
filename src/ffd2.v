@@ -12,8 +12,9 @@ module ffd2(d, clk, q, reset);
   wire sig_q;
   input reset;
   wire reset;
-  always @(negedge clk)
-    _0_ <= d;
+  always @(negedge clk, posedge reset)
+    if (reset) _0_ <= 1'h1;
+    else _0_ <= d;
   always @(negedge clk)
     _1_ <= sig_q;
   assign sig_q = _0_;
