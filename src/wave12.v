@@ -56,10 +56,12 @@ module wave12(clk, dataout, reset);
   assign _1_ = { 27'h0000000, i } + 32'd1;
   assign _2_ = { 27'h0000000, i } == 32'd29;
   assign _3_ = _2_ ? 5'h00 : _1_[4:0];
-  always @(posedge clk)
-    _4_ <= _3_;
-  always @(posedge clk)
-    _5_ <= _7_;
+  always @(posedge clk, posedge reset)
+    if (reset) _4_ = 5'h00;
+    else _4_ <= _3_;
+  always @(posedge clk, posedge reset)
+    if (reset) _5_ = 8'h00;
+    else _5_ <= _7_;
   assign _0_ = 5'h1d - i;
   assign i = _4_;
   assign conv = _5_;
