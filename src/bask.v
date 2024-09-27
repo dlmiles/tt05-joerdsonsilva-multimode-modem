@@ -35,7 +35,8 @@ module bask(reset, clk, bask_out);
   );
   wave11 instance3 (
     .clk(clk),
-    .dataout(_2_)
+    .dataout(_2_),
+    .reset(reset)
   );
   assign sig_clk_1mhz = _0_;
   assign sig_data2 = _1_;

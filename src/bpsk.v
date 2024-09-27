@@ -32,11 +32,13 @@ module bpsk(reset, clk, bpsk_out);
   );
   wave13 instance3 (
     .clk(clk),
-    .dataout(_2_)
+    .dataout(_2_),
+    .reset(reset)
   );
   wave23 instance4 (
     .clk(clk),
-    .dataout(_3_)
+    .dataout(_3_),
+    .reset(reset)
   );
   assign sig_clk_1mhz = _0_;
   assign sig_data2 = _1_;

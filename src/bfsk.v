@@ -32,11 +32,13 @@ module bfsk(reset, clk, bfsk_out);
   );
   wave12 instance3 (
     .clk(clk),
-    .dataout(_2_)
+    .dataout(_2_),
+    .reset(reset)
   );
   wave22 instance4 (
     .clk(sig_clk_25mhz),
-    .dataout(_3_)
+    .dataout(_3_),
+    .reset(reset)
   );
   rdg2 instance5 (
     .clk(sig_clk_1mhz),
