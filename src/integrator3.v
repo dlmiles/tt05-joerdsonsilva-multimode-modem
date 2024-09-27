@@ -30,8 +30,9 @@ module integrator3(clk, reset, comp_in, comp_out);
   assign _10_ = _00_ ? _04_ : 32'd0;
   assign _11_ = ~ reset;
   assign _01_ = _11_ ? _10_ : i;
-  always @(posedge clk)
-    _02_ <= _01_;
+  always @(posedge clk, posedge reset)
+    if (reset) _02_ <= 32'd0;
+    else _02_ <= _01_;
   always @(posedge clk, posedge reset)
     if (reset) _03_ <= 1'h0;
     else _03_ <= _09_;
