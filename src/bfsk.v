@@ -40,7 +40,8 @@ module bfsk(reset, clk, bfsk_out);
   );
   rdg2 instance5 (
     .clk(sig_clk_1mhz),
-    .data(_4_)
+    .data(_4_),
+    .reset(reset)
   );
   freq_select instance6 (
     .clk_1(sig_wave1),

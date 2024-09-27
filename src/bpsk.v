@@ -27,7 +27,8 @@ module bpsk(reset, clk, bpsk_out);
   );
   rdg3 instance2 (
     .clk(sig_clk_1mhz),
-    .data(_1_)
+    .data(_1_),
+    .reset(reset)
   );
   wave13 instance3 (
     .clk(clk),

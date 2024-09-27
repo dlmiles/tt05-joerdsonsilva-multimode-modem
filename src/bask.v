@@ -30,7 +30,8 @@ module bask(reset, clk, bask_out);
   );
   rdg1 instance2 (
     .clk(sig_clk_1mhz),
-    .data(_1_)
+    .data(_1_),
+    .reset(reset)
   );
   wave11 instance3 (
     .clk(clk),
