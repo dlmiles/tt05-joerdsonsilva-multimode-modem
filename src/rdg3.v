@@ -27,8 +27,9 @@ module rdg3(clk, data, reset);
   assign _07_ = i == 32'd1;
   assign _08_ = i + 32'd1;
   assign _09_ = _07_ ? 32'd0 : _08_;
-  always @(negedge clk)
-    _10_ <= _09_;
+  always @(negedge clk, posedge reset)
+    if (reset) _10_ <= 32'd0;
+    else _10_ <= _09_;
   assign _01_ = _07_ ? sig_data : _02_;
   always @(negedge clk)
     _02_ <= _01_;
