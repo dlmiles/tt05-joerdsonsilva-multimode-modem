@@ -37,22 +37,26 @@ module rdg2(clk, data, reset);
   ffd2 ffd0 (
     .clk(clk),
     .d(b),
-    .q(_03_)
+    .q(_03_),
+    .reset(reset)
   );
   ffd2 ffd1 (
     .clk(clk),
     .d(a),
-    .q(_00_)
+    .q(_00_),
+    .reset(reset)
   );
   ffd2 ffd3 (
     .clk(clk),
     .d(c),
-    .q(_04_)
+    .q(_04_),
+    .reset(reset)
   );
   ffd2 ffd4 (
     .clk(clk),
     .d(d),
-    .q(_05_)
+    .q(_05_),
+    .reset(reset)
   );
   assign a = _06_;
   assign b = _00_;
