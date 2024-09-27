@@ -1,5 +1,41 @@
 ![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg) ![](../../workflows/wokwi_test/badge.svg)
 
+# Project testing (reset handling diagnostic)
+
+This project exists as a fork of the original upstream https://github.com/joerdsonsilva/tt05-multimode-modem
+
+This is a demonstration on the steps in debugging and validating reset behaviour concerns
+(even in project after microchip ASIC/IC production).
+
+The final repository represents the belt-and-braces (pessimistic / defensive) approach
+to correction. 
+The 4 major reset areas added should be individually tested for all
+15 possible combinations, to find out the minimum change needed to
+observe expected (correct) circuit outcome.
+
+The method is like a game, all of these modes of usage should result in the
+exact same output waveforms.
+
+```
+# Maybe install oss-cad-suite and add to $PATH for the necessary tooling
+cd src
+
+# pre-synth simulation testing
+GL_TEST=true make
+GL_TEST=true RANDOM_POLICY=false  make
+GL_TEST=true RANDOM_POLICY=true   make
+# Running 'random' 10s or 1000s of times is better
+GL_TEST=true RANDOM_POLICY=random make
+
+# post-synth GL_TEST modes (note the gate_level_netlist.v in the repo is the
+# actual manufactured netlist which does not always output expected data)
+GL_TEST=true make GATES=yes
+GL_TEST=true RANDOM_POLICY=false  make GATES=yes
+GL_TEST=true RANDOM_POLICY=true   make GATES=yes
+# Running 'random' 10s or 1000s of times is better
+GL_TEST=true RANDOM_POLICY=random make GATES=yes
+```
+
 # Multimode Modem
 
 <div align="justify">
