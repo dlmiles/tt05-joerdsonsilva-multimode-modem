@@ -11,7 +11,7 @@ module rdg2(clk, data);
   wire _07_;
   wire [31:0] _08_;
   wire [31:0] _09_;
-  reg [31:0] _10_ = 32'd0;
+  reg [31:0] _10_ /*= 32'd0*/;
   wire a;
   wire b;
   wire c;
