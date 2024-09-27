@@ -29,12 +29,21 @@ module tb ();
     wire [7:0] uo_out;
     wire [7:0] uio_out;
     wire [7:0] uio_oe;
+`ifdef GL_TEST
+    wire VPWR = 1'b1;
+    wire VGND = 1'b0;
+`endif
 
-    tt_um_joerdsonsilva_top tt_um_joerdsonsilva_top (
+`ifdef GL_TEST
+    tt_um_joerdsonsilva_modem tt_um_joerdsonsilva_modem
+`else
+    tt_um_joerdsonsilva_top tt_um_joerdsonsilva_top
+`endif
+    (
     // include power ports for the Gate Level test
     `ifdef GL_TEST
-        .VPWR( 1'b1),
-        .VGND( 1'b0),
+        .VPWR(VPWR),
+        .VGND(VGND),
     `endif
         .ui_in      (ui_in),    // Dedicated inputs
         .uo_out     (uo_out),   // Dedicated outputs
