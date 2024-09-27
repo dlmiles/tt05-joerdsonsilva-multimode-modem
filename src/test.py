@@ -12,6 +12,7 @@ async def test_modem(dut):
     # reset
     dut._log.info("reset")
     dut.rst_n.value = 0
+    await ClockCycles(dut.clk, 500)
     await Timer(200, units="us")
 
     dut.rst_n.value = 1
