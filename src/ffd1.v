@@ -2,7 +2,7 @@
 
 module ffd1(d, clk, q);
 
-  reg _0_ = 1'h1;
+  reg _0_ /*= 1'h1*/;
   reg _1_;
   input clk;
   wire clk;
